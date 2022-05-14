@@ -26,6 +26,11 @@ public class ExerciciosSelenium {
         driver.findElement(By.xpath("//*[@value='Male']")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@value='Male']")).isSelected());
 
+        //Exercicio03
+        driver.findElement(By.xpath("//input[@id='checkbox1']")).click();
+        Assert.assertTrue("Checkbox não selecionado",driver.findElement(By.xpath("//input[@id='checkbox1']")).isSelected());
+        Assert.assertTrue("Checkbox selecionado", driver.findElement(By.xpath("//label[contains(text(),'Movies')]")).isSelected());
+
     }
 
     @After
