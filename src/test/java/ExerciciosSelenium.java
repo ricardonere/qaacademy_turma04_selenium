@@ -38,20 +38,32 @@ public class ExerciciosSelenium {
         driver.findElement(By.xpath("//div[@id='msdd']")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[contains(text(),'Portuguese')]")).click();
-
-
         //Listas Option
-
         //com Click, tem que navegar até o elemento option e extrair o xpath
         driver.findElement(By.xpath("//option[@value='Java']")).click();
         Thread.sleep(2000);
 
         //Selecionar Lista Option/Select com Select Selenium
-        WebElement selectElement = driver.findElement(By.xpath("//select[@id='Skills']"));
+        WebElement selectElement =
+                driver.findElement(By.xpath("//select[@id='Skills']"));
         Select select = new Select(selectElement);
         select.selectByVisibleText("Linux");
 
+//        Countries
+        driver.findElement(By.xpath("//span[@class='select2-selection select2-selection--single']")).click();
+        driver.findElement(By.xpath("//*[@class='select2-results__options']//*[contains(text(),'United States of America')]")).click();
 
+        // Birthday
+
+        driver.findElement(By.xpath("//option[@value='1988']")).click();
+        driver.findElement(By.xpath("//option[@value='April']")).click();
+        driver.findElement(By.xpath("//option[@value='15']")).click();
+
+        //Password
+
+        driver.findElement(By.xpath("//input[@id='firstpassword']")).sendKeys("teste123");
+        driver.findElement(By.xpath("//input[@id='secondpassword']")).sendKeys("teste1223");
+        driver.findElement(By.xpath("//button[@id='submitbtn']")).click();
 
     }
 
