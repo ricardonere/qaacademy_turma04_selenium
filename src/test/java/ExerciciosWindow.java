@@ -21,9 +21,10 @@ WebDriver driver;
 
         driver.findElement(By.xpath("//a[@href='http://www.selenium.dev/']//button[@class='btn btn-info'][contains(text(),'click')]")).click();
         Object[] janelas = driver.getWindowHandles().toArray();
+        System.out.println(driver.getCurrentUrl());
         driver.switchTo().window(janelas[1].toString());
         System.out.println(driver.getCurrentUrl());
-        Assert.assertTrue(driver.getCurrentUrl().equals("https://www.selenium.dev/"));
+        Assert.assertTrue("URL Diferente", driver.getCurrentUrl().equals("https://www.selenium.dev/"));
     }
 
     @After
